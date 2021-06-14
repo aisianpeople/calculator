@@ -7,7 +7,7 @@ const reader = readline.createInterface({
 
 
 
-reader.question("What would you like to calculate(+,-,*,/,sqrt,√)? ", function(input){
+reader.question("What would you like to calculate(+,-,*,/,sqrt,√,%,^2,^3,^)? ", function(input){
 	tokens = input.split(' ');
 	
 	mathSymbol = tokens[0];
@@ -18,21 +18,37 @@ reader.question("What would you like to calculate(+,-,*,/,sqrt,√)? ", function
 	{
 		console.log(num1 + num2);
 	}
-	if (mathSymbol === "-")
+	else if (mathSymbol === "-")
 	{
 		console.log(num1 - num2);
 	}
-	if (mathSymbol === "*")
+	else if (mathSymbol === "*")
 	{
 		console.log(num1 * num2);
 	}
-	if (mathSymbol === "/")
+	else if (mathSymbol === "/")
 	{
 		console.log(num1 / num2);
 	}
-	if (mathSymbol === "√" || mathSymbol === "sqrt")
+	else if (mathSymbol === "√" || mathSymbol === "sqrt")
 	{
 		console.log(Math.sqrt(num1));
+	}
+	else if (mathSymbol === "%")
+	{
+		console.log(num1 % num2);
+	}
+	else if (mathSymbol === "^")
+	{
+		console.log(Math.pow(num1, num2));
+	}
+	else if (mathSymbol === "^2")
+	{
+		console.log(Math.pow(num1, 2));
+	}
+	else if (mathSymbol === "^3")
+	{
+		console.log(Math.pow(num1, 3));
 	}
 
 
